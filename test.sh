@@ -36,14 +36,13 @@ cp $WORKSPACE/logs/result.jtl $WORKSPACE/logs/${REPORT_TIMESTAMP}_${BUILD_NUMBER
 
 echo "生成html格式报告"
 
-# if [ ! -d "logs" ]; then 
-#     mkdir logs 
-#     echo "创建logs目录成功" 
-# fi
-
-echo "$JOB_NAME"
-
 tmpl="$JMETER/extras/jmeter-results-detail-report_21.xsl" 
 source_result=$WORKSPACE/logs/${REPORT_TIMESTAMP}_${BUILD_NUMBER}.jtl 
-target_result=$WORKSPACE/logs/${JOB_NAME}_${REPORT_TIMESTAMP}_${BUILD_NUMBER}.html 
+target_result=$WORKSPACE/logs/${JOB_NAME}/${REPORT_TIMESTAMP}_${BUILD_NUMBER}.html 
+
+if [ ! -d "$WORKSPACE/logs/${JOB_NAME}" ]; then 
+    echo "创建 Job Log Dir" 
+    mkdir "$WORKSPACE/logs/${JOB_NAME}" 
+fi
+
 xsltproc $tmpl $source_result > $target_result
