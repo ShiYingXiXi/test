@@ -11,6 +11,7 @@ pipeline {
         stage('Run'){
             steps {
                 sh 'pwd; ls -al; echo "$MyEnv"'
+                sh '$base_workspace'
             }
         }
     }
