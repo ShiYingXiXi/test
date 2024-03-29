@@ -11,8 +11,7 @@ pipeline {
     stages{
         stage('Run'){
             steps {
-                sh 'pwd; ls -al; echo "$MyEnv"; echo "$WORKSPACE"; python3 "${WORKSPACE}/test.py"'
-                // sh 'python3 "${Workspace}/test.py"'
+                sh 'sh ${Workspace}/test.sh'
             }
         }
     }
