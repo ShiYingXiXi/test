@@ -11,7 +11,7 @@ pipeline {
     stages{
         stage('Run'){
             steps {
-                sh 'sh ${Workspace}/test.sh'
+                sh 'sh ${WORKSPACE}/test.sh'
             }
         }
     }
