@@ -29,7 +29,8 @@ if [ -f "logs/result.jtl" ]; then
 fi
 
 echo "执行 Jmeter 测试"
-$JMETER_BIN/jmeter.sh -n -t $WORKSPACE/LMS.jmx -l $WORKSPACE/logs/result.jtl
+$JMETER_BIN/jmeter.sh -n -t $WORKSPACE/LMS.jmx -l $WORKSPACE/logs/result.jtl -J jmeter.save.saveservice.output_format=xml
+
 
 echo "备份当前执行记录"
 cp $WORKSPACE/logs/result.jtl $WORKSPACE/logs/${REPORT_TIMESTAMP}_${BUILD_NUMBER}.jtl
