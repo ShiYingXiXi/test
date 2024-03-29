@@ -6,7 +6,7 @@ pipeline {
     environment {
         MyEnv = 'Test'
         WORKSPACE = '/var/jenkins_home/workspace/test_master'
-        JMETER = '/var/jmeter/apache-jmeter-5.6.3/bin'
+        JMETER = '/var/jenkins_home/apache-jmeter-5.6.3/bin'
     }
 
     stages{
