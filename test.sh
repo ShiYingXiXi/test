@@ -11,6 +11,8 @@ echo "$PATH"
 
 python3 "${WORKSPACE}/test.py"
 
+set -xe
+git 
 echo "===== Jmeter 测试 ====="
 
 echo "创建日志目录"
