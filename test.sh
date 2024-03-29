@@ -13,6 +13,8 @@ python3 "${WORKSPACE}/test.py"
 
 set -xe
 
+REPORT_TIMESTAMP=$(date +%s)
+
 echo "===== Jmeter 测试 ====="
 
 echo "创建日志目录"
@@ -33,6 +35,6 @@ cp $WORKSPACE/logs/result.jtl $WORKSPACE/logs/${REPORT_TIMESTAMP}_${BUILD_NUMBER
 
 echo "生成html格式报告"
 tmpl="$JMETER/extras/jmeter-results-detail-report_21.xsl" 
-source_result=$WORKSPACE/logs/${REPORT_TIMESTAMP}${BUILD_NUMBER}.jtl 
+source_result=$WORKSPACE/logs/${REPORT_TIMESTAMP}_${BUILD_NUMBER}.jtl 
 target_result=$WORKSPACE/logs/${JOB_NAME}${REPORT_TIMESTAMP}_${BUILD_NUMBER}.html 
 xsltproc $tmpl $source_result > $target_result
