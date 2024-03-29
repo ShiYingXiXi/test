@@ -41,6 +41,8 @@ echo "生成html格式报告"
 #     echo "创建logs目录成功" 
 # fi
 
+echo "$JOB_NAME"
+
 tmpl="$JMETER/extras/jmeter-results-detail-report_21.xsl" 
 source_result=$WORKSPACE/logs/${REPORT_TIMESTAMP}_${BUILD_NUMBER}.jtl 
 target_result=$WORKSPACE/logs/${JOB_NAME}_${REPORT_TIMESTAMP}_${BUILD_NUMBER}.html 
