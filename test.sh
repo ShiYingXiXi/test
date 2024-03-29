@@ -4,6 +4,9 @@ pwd
 
 ls -al
 
+# jmeter.sh bin 加入 PATH
+source "/root/.bashrc"
+
 echo "$MyEnv"
 echo "$WORKSPACE"
 
