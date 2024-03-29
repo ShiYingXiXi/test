@@ -42,7 +42,7 @@ target_result=$WORKSPACE/logs/${JOB_NAME}/${REPORT_TIMESTAMP}_${BUILD_NUMBER}.ht
 
 if [ ! -d "$WORKSPACE/logs/${JOB_NAME}" ]; then 
     echo "创建 Job Log Dir" 
-    mkdir "$WORKSPACE/logs/${JOB_NAME}" 
+    mkdir -p "$WORKSPACE/logs/${JOB_NAME}" 
 fi
 
 xsltproc $tmpl $source_result > $target_result
