@@ -7,6 +7,8 @@ ls -al
 echo "$MyEnv"
 echo "$WORKSPACE"
 
+echo "$PATH"
+
 python3 "${WORKSPACE}/test.py"
 
 echo "===== 执行 Jmeter 测试 ====="
