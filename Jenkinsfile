@@ -1,6 +1,6 @@
 pipeline {
 
-  agent none
+  agent any
 
     // 设置全局变量
     environment {
