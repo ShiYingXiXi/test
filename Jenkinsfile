@@ -12,7 +12,7 @@ pipeline {
         stage('Run'){
             steps {
                 sh 'pwd; ls -al; echo "$MyEnv"'
-                python3 '$Workspace/test.py'
+                sh 'python3 "$Workspace/test.py"'
             }
         }
     }
