@@ -29,14 +29,14 @@ if [ -f "logs/result.jtl" ]; then
 fi
 
 echo "执行 Jmeter 测试"
-$JMETER/jmeter.sh -n -t $WORKSPACE/LMS.jmx -l $WORKSPACE/logs/result.jtl
+$JMETER_BIN/jmeter.sh -n -t $WORKSPACE/LMS.jmx -l $WORKSPACE/logs/result.jtl
 
 echo "备份当前执行记录"
 cp $WORKSPACE/logs/result.jtl $WORKSPACE/logs/${REPORT_TIMESTAMP}_${BUILD_NUMBER}.jtl
 
 echo "生成html格式报告"
 
-tmpl="$JMETER/extras/jmeter-results-detail-report_21.xsl" 
+tmpl="$JMETER_HOME/extras/jmeter-results-detail-report_21.xsl" 
 source_result=$WORKSPACE/logs/${REPORT_TIMESTAMP}_${BUILD_NUMBER}.jtl 
 target_result=$WORKSPACE/logs/${JOB_NAME}/${REPORT_TIMESTAMP}_${BUILD_NUMBER}.html 
 
